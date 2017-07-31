@@ -2,6 +2,7 @@ import { HandWriteAPIPage } from './../../e2e/app.po';
 import { Component } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
 import { FormsModule } from '@angular/forms';
+
 import 'rxjs/add/operator/map';
 
 
@@ -20,7 +21,7 @@ export class AppComponent {
 
   // API Calls
   constructor(private http: Http){
-      this.GetHandWritings();      
+      this.GetHandWritings();
   }
 
   handwriting_id: string = '';
@@ -88,18 +89,20 @@ export class AppComponent {
       .map(res => res.json())
       .subscribe(data => {
         this.data = data;
-        console.log(data);
+        
       })
   }
 
   Final: string;
 
   RenderImage(){
-      this.Final = this.FinalURL
+    let headers = new Headers();
+    this.createAuthorizationHeader(headers);
+     this.http.get(this.FinalURL
       +'handwriting_id='+this.handwriting_id
       +'&text='+this.text
       +'&handwriting_size='+this.handwriting_size
-      +'&handwriting_color='+this.handwriting_color;      
+      +'&handwriting_color='+this.handwriting_color,{headers: headers}).subscribe(data => {this.Final = data.toString()});    
       console.log(this.Final);
   }
 

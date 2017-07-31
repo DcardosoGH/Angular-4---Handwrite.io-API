@@ -1,27 +1,44 @@
+
 <h2>{{ title }}</h2>
+<md-card>
+    <md-card-subtitle>
+        Select Handwriting
+    </md-card-subtitle>
+    <md-select class="select" [(ngModel)]="handwriting_id">
+        <md-option *ngFor="let handwrite of data" [value]="handwrite.id"> {{handwrite.title}}</md-option>    
+    </md-select>
 
-<select [(ngModel)]="handwriting_id">
-    <option *ngFor="let handwrite of data" [value]="handwrite.id"> {{handwrite.title}}</option>    
-</select>
 
-<select [(ngModel)]="handwriting_size">
-    <option *ngFor="let size of font_size" [value]="size.id"> {{size.name}} </option>
-</select>
 
-<select [(ngModel)]="handwriting_color">
-    <option *ngFor="let color of font_color" [value]="color.id"> {{color.name}} </option>
-</select>
-     
-<br>
-<br>
+    <md-card-subtitle> Select Handwriting Size </md-card-subtitle>
+    <md-select class="select" [(ngModel)]="handwriting_size">
+        <md-option *ngFor="let size of font_size" [value]="size.id"> {{size.name}} </md-option>
+    </md-select>
+ 
 
-<textarea rows="10" cols="50" [(ngModel)]="text" placeholder="Insert Text Here"></textarea>
-<br>
 
-<button (click)="RenderImage()"> Render Image </button>
+    <md-card-subtitle>Select Color</md-card-subtitle>
+    <md-select class="select" [(ngModel)]="handwriting_color">
+        <md-option *ngFor="let color of font_color" [value]="color.id"> {{color.name}} </md-option>
+    </md-select>
+</md-card>
+
+<md-card>
+    <md-input-container>
+        <textarea mdInput rows="10" cols="50" [(ngModel)]="text" placeholder="Insert your text here"></textarea>
+    </md-input-container>
+</md-card>
+
+<md-card>
+    <button md-button (click)="GetHandWritings()">Test</button>
+    <button md-button (click)="RenderImage()">Render Image</button>
+</md-card>
+
+
 <div>
     <img src="{{ Final }}" alt="">
 </div>
+
 
 
 

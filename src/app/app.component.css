@@ -1,0 +1,8 @@
+.select{
+
+    display:flex;
+    height: 70px;
+    max-height: 70px;
+    max-width: 200px;
+    font-size: 3.5em;   
+}
