@@ -1,8 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
 .select{
 
+    font-family: 'Lato', sans-serif;
     display:flex;
     height: 70px;
+    width: 150px;
     max-height: 70px;
-    max-width: 200px;
-    font-size: 3.5em;   
+    
+    font-size: 3.5em;
+    font-weight: bold;
+    margin-right: 20x;
+}
+
+h2{
+    font-family: 'Lato', sans-serif;
+}
+h4{
+    font-family: 'Lato', sans-serif;
+}
+
+.subtitle{
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.mdInput{
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+   
 }

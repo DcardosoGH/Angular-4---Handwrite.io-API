@@ -1,50 +1,24 @@
-
-<h2>{{ title }}</h2>
 <md-card>
-    <md-card-subtitle>
-        Select Handwriting
-    </md-card-subtitle>
-    <md-select class="select" [(ngModel)]="handwriting_id">
-        <md-option *ngFor="let handwrite of data" [value]="handwrite.id"> {{handwrite.title}}</md-option>    
-    </md-select>
+    <md-card-title><h2> {{ title}} </h2></md-card-title>
+    <md-card-subtitle> <h4 class="subtitle"> Angular 4 App with Handwriting.io API </h4> </md-card-subtitle>   
 
 
 
-    <md-card-subtitle> Select Handwriting Size </md-card-subtitle>
-    <md-select class="select" [(ngModel)]="handwriting_size">
-        <md-option *ngFor="let size of font_size" [value]="size.id"> {{size.name}} </md-option>
-    </md-select>
- 
+<md-select class="select" [(ngModel)]="handwritingId" required>
+    <md-option *ngFor="let handwrite of data" [value]="handwrite.id"> {{handwrite.title}}</md-option>    
+</md-select>
 
+<md-select class="select" [(ngModel)]="handwritingSize" required>
+    <md-option *ngFor="let size of font_size" [value]="size.id"> {{size.name}} </md-option>
+</md-select>
 
-    <md-card-subtitle>Select Color</md-card-subtitle>
-    <md-select class="select" [(ngModel)]="handwriting_color">
-        <md-option *ngFor="let color of font_color" [value]="color.id"> {{color.name}} </md-option>
-    </md-select>
+<md-select class="select" [(ngModel)]="handwritingColor" required>
+    <md-option *ngFor="let color of font_color" [value]="color.id"> {{color.name}} </md-option>
+</md-select>
+
+<md-input-container >
+   <textarea mdInput rows="5" cols="40" [(ngModel)]="text" placeholder="Insert your text here" class="mdInput" required></textarea>
+</md-input-container>
+
+<button md-raised-button (click)="RenderFinalURL()" class="">Render Image</button>
 </md-card>
-
-<md-card>
-    <md-input-container>
-        <textarea mdInput rows="10" cols="50" [(ngModel)]="text" placeholder="Insert your text here"></textarea>
-    </md-input-container>
-</md-card>
-
-<md-card>
-    <button md-button (click)="GetHandWritings()">Test</button>
-    <button md-button (click)="RenderImage()">Render Image</button>
-</md-card>
-
-
-<div>
-    <img src="{{ Final }}" alt="">
-</div>
-
-
-
-
-
-
-
-
-
-
