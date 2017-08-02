@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
+
 .select{
 
     font-family: 'Lato', sans-serif;
@@ -15,6 +16,7 @@
 
 h2{
     font-family: 'Lato', sans-serif;
+
 }
 h4{
     font-family: 'Lato', sans-serif;
@@ -31,5 +33,6 @@ h4{
     font-family: 'Lato', sans-serif;
     font-size: 1.1em;
     font-weight: bold;
+    display: block;
    
 }
